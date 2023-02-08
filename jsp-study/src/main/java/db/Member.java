@@ -1,5 +1,7 @@
 package db;
 
+import java.util.Date;
+
 //데이터 관점에서 회원에 대한 데이터를 저장하는 클래스
 //회원의 데이터 추상화
 public class Member {
@@ -7,6 +9,9 @@ public class Member {
     private String userId;
     private String password;
     private String name;
+    private String mobileNo;
+    private boolean marketingYn;
+    private Date registerDate;
 
     public String getMemberType() {
         return memberType;
@@ -39,4 +44,31 @@ public class Member {
     public void setName(String name) {
         this.name = name;
     }
+
+	public String getMobileNo() {
+		return mobileNo;
+	}
+
+	public void setMobileNo(String mobileNo) {
+		this.mobileNo = mobileNo;
+	}
+
+	public boolean isMarketingYn() {
+		return marketingYn;
+	}
+
+	public void setMarketingYn(boolean marketingYn) {
+		this.marketingYn = marketingYn;
+	}
+
+	public Date getRegisterDate() {
+		return registerDate;
+	}
+
+	public void setRegisterDate(Date registerDate) {
+		this.registerDate = registerDate;
+	}
+    
+    
+    
 }

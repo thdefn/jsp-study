@@ -41,19 +41,24 @@
 		<tbody>
 			<tr>
 			<%
-	
+			for(Member member : memberList){
+			%>
+    	<tr>
+    	 <td> 
+    	 	<%=member.getMemberType()%>
+    	 </td>
+    	 <td> 
+    	 <a href="detail.jsp?memberType=<%=member.getMemberType()%>&userId=<%=member.getUserId()%>">
+    	 <%=member.getUserId()%>
+    	 </a>
+    	 </td>
+    	 <td> <%=member.getPassword()%> </td>
+    	 <td> <%=member.getName()%> </td>
+    	 </tr>
     
-    for(Member member : memberList){
-    	//태그 형태로 출력하기 위함 블록태그로 만들자
-    	out.write("<tr>");
-    	 out.write("<td>"+ member.getMemberType()+"</td>");
-    	 out.write("<td>"+member.getUserId()+"</td>");
-    	 out.write("<td>"+member.getPassword()+"</td>");
-    	 out.write("<td>"+member.getName()+"</td>");
-    	 out.write("</tr>");
-    }
-    
-	%>
+    		<%
+    			}   
+			%>
 		
 			</tr>
 		</tbody>

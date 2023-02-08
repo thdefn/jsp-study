@@ -1,13 +1,16 @@
 package db;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 //회원에 대한 기능을 구현한 클래스화
 //회원의 기능 추상화
 public class MemberService {
 
-    public void dbSelect(){
+    public List<Member> list(){
+    	
+    	List<Member> memberList = new ArrayList<>();
 
         //1.ip(domain) 2.port 3.계정 4.password 5.인스턴스
         String url = "jdbc:mariadb://localhost:3305/testdb1";
@@ -58,6 +61,14 @@ public class MemberService {
                 String userId = rs.getString("user_id");
                 String password = rs.getString("password");
                 String name = rs.getString("name");
+               
+                Member member = new Member();
+                member.setMemberType(memberType);
+                member.setName(name);
+                member.setUserId(userId);
+                member.setPassword(password);
+                
+                memberList.add(member);
 
                 System.out.println(memberType+", "+userId+", "+password+", "+name);
 
@@ -99,6 +110,8 @@ public class MemberService {
             }
 
         }
+        
+        return memberList;
 
     }
 

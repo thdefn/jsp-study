@@ -1,9 +1,22 @@
 package db;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class DbTestMain {
-    public static void main(String[] args) {
+	
+	public static void main(String[] args) {
+        //DbTest dbTest = new DbTest();
+        //dbTest.dbSelect();
+        //dbTest.dbInsert();
+        //dbTest.dbUpdate();
+        //dbTest.dbDelete();
+
+        MemberService memberService = new MemberService();
+        List<Member> memberList = memberService.list();
+	}
+	
+    public static void _main(String[] args) {
         //DbTest dbTest = new DbTest();
         //dbTest.dbSelect();
         //dbTest.dbInsert();
